@@ -1,0 +1,14 @@
+{
+    "development": {
+        "username": "root",
+        "password": "root",
+        "database": "a_test_javan",
+        "host": "localhost",
+        "dialect": "mysql",
+        "port": "3307",
+        "pool": {
+            "maxConnections": 50,
+            "maxIdleTime": 300
+        }
+    }
+}

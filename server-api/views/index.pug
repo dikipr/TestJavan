@@ -1,0 +1,55 @@
+html
+    head
+        title= title
+        block styles
+            link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+        block scripts
+            script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js")
+            script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")
+    body
+        div(
+            class="container"
+            style="margin-top:50px"
+        )
+            div(
+                class="row justify-content-md-center align-items-center"
+            )
+                div(
+                    class="col col-lg-4"
+                    align="center"
+                )
+                    div(
+                        class="spinner-grow text-primary"
+                        role="status"
+                    )
+                    div(
+                        class="spinner-grow text-secondary"
+                        role="status"
+                    )
+                    div(
+                        class="spinner-grow text-success"
+                        role="status"
+                    )
+                    div(
+                        class="spinner-grow text-danger"
+                        role="status"
+                    )
+                    div(
+                        class="spinner-grow text-warning"
+                        role="status"
+                    )
+                    div(
+                        class="spinner-grow text-info"
+                        role="status"
+                    )
+                    
+            div(
+                class="row justify-content-md-center align-items-center"
+            )
+                div(
+                    class="col col-lg-4"
+                    align="center"
+                )
+                    span= app_name
+                    br
+                    span= message

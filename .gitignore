@@ -1,0 +1,5 @@
+/server-api/node_modules
+/server-api/log
+/server-private/node_modules
+/server-private/.next
+/server-private/log
