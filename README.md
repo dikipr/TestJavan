@@ -1,8 +1,5 @@
 
-# TestJavan"
-
-# library 
-digunakan secara global
+# TestJavan
 
 # server-api
 aplikasi nodeJs digunakan sebagai API baik global / private / public

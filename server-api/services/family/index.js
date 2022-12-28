@@ -11,6 +11,9 @@ const all = async (req, res, next, user) => {
         const where = { ...req?.params }
         const data = await models?.family?.findAll({
             where,
+            order: [
+                [`createdAt`, `desc`],
+            ],
         })
         res.json({ count: data.length, data, })
     } catch (error) {
