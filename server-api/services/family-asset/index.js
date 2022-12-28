@@ -9,7 +9,7 @@ const moment = require('moment')
 const all = async (req, res, next, user) => {
     try {
         const where = { ...req?.query }
-        const data = await models?.family?.findAll({
+        const data = await models?.family_asset?.findAll({
             where,
             order: [
                 [`createdAt`, `desc`],
@@ -25,7 +25,7 @@ const get = async (req, res, next, user) => {
     try {
         const { id } = req.params || {}; //req.params = path in uri
         const where = { id }
-        const data = await models?.family?.findOne({
+        const data = await models?.family_asset?.findOne({
             where,
         })
         if (!data) throw Error('Data tidak ditemukan!')
@@ -38,14 +38,14 @@ const get = async (req, res, next, user) => {
 async function create(req, res, next, user) {
     try {
         const {
-            parentId, name, gender, description,
+            familyId, name, description, price,
         } = req.body || {}
         await models.sequelize.transaction(async transaction => {
-            const data = await models?.family?.create({
-                parentId,
+            const data = await models?.family_asset?.create({
+                familyId,
                 name,
-                gender,
                 description,
+                price,
                 createdBy: user?.id,
                 updatedBy: user?.id,
             }, {
@@ -62,21 +62,21 @@ async function update(req, res, next, user) {
     try {
         const { id } = req.params || {};
         const {
-            parentId, name, gender, description,
+            familyId, name, description, price,
         } = req.body || {}
         await models.sequelize.transaction(async transaction => {
-            const update = await models?.family?.update({
-                parentId,
+            const update = await models?.family_asset?.update({
+                familyId,
                 name,
-                gender,
                 description,
+                price,
                 createdBy: user?.id,
                 updatedBy: user?.id,
             }, {
                 where: { id: id },
                 transaction,
             });
-            const data = await models?.family?.findOne({
+            const data = await models?.family_asset?.findOne({
                 where: { id: id },
                 transaction,
             })
@@ -91,7 +91,7 @@ async function destroy(req, res, next, user) {
     try {
         const { id } = req.params || {};
         await models.sequelize.transaction(async transaction => {
-            const data = await models?.family?.destroy({
+            const data = await models?.family_asset?.destroy({
                 where: {
                     id,
                 },

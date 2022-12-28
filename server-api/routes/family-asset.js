@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const service = require('../services/family');
+const service = require('../services/family-asset');
 const { Route } = require('../utils/authorizations');
 const { TYPES_LOGIN } = require('../library/statics');
 
